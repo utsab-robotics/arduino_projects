@@ -1,51 +1,37 @@
-int red_pin = 6;
-int green_pin = 5;
-int blue_pin = 3;
+int trig_pin = 9;
+int echo_pin = 10;
 
+long duration;
+float distance;
 
-void setup(){
-  pinMode(red_pin, OUTPUT);
-  pinMode(green_pin, OUTPUT);
-  pinMode(blue_pin, OUTPUT);
+void setup() {
+  pinMode(trig_pin, OUTPUT);
+  pinMode(echo_pin, INPUT);
+
   Serial.begin(9600);
-  }
+}
 
+void loop() {
 
-void loop(){
-  //Red Light
-  analogWrite(red_pin, 0);
-  analogWrite(green_pin, 255);
-  analogWrite(blue_pin, 255);
-  delay(1000);
+  // Clear trigger pin
+  digitalWrite(trig_pin, LOW);
+  delayMicroseconds(2);
 
-   //Green Light
-  analogWrite(red_pin, 255);
-  analogWrite(green_pin, 0);
-  analogWrite(blue_pin, 255);
-  delay(1000);
+  // Send ultrasonic pulse
+  digitalWrite(trig_pin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trig_pin, LOW);
 
-   //Blue Light
-  analogWrite(red_pin, 255);
-  analogWrite(green_pin, 255);
-  analogWrite(blue_pin, 0);
-  delay(1000);
+  // Read echo time
+  duration = pulseIn(echo_pin, HIGH);
 
-  //Yellow Light
-  analogWrite(red_pin, 0);
-  analogWrite(green_pin, 0);
-  analogWrite(blue_pin, 255);
-  delay(1000);
+  // Calculate distance
+  distance = duration * 0.034 / 2;
 
-  //Purple Light
-  analogWrite(red_pin, 0);
-  analogWrite(green_pin, 255);
-  analogWrite(blue_pin, 0);
-  delay(1000);
+  // Print distance
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
 
-  //White Light
-  analogWrite(red_pin, 0);
-  analogWrite(green_pin, 0);
-  analogWrite(blue_pin, 0);
-  delay(1000);
-  
-  }
+  delay(500);
+}

@@ -28,6 +28,8 @@ To detect motion using a PIR sensor and control an LED using an Arduino Uno whil
 
 ```md
 ![Circuit Diagram](images/circuit.png)
+
+![Image](images/image.png)
 ```
 
 ---
