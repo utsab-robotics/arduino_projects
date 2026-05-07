@@ -22,9 +22,9 @@ To measure distance using an HC-SR04 Ultrasonic Sensor with Arduino Uno and disp
 
 ## 3. 🖼️ Circuit Diagram
 
-```md
+
 ![Circuit Diagram](images/circuit.png)
-```
+
 
 ---
 

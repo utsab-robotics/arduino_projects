@@ -23,7 +23,7 @@ To blink an LED ON and OFF at a fixed interval using an Arduino Uno.
 
 ## 3. 🖼️ Circuit Diagram
 
-*(Add your circuit image here)*
+
 ![Circuit Diagram](images/circuit.png)
 
 ---

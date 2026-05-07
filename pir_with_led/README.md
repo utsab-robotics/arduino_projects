@@ -24,13 +24,13 @@ To detect motion using a PIR sensor and control an LED using an Arduino Uno whil
 
 ## 3. 🖼️ Circuit Diagram
 
-*(Add your circuit image here)*
 
-```md
+
+
 ![Circuit Diagram](images/circuit.png)
 
 ![Image](images/image.png)
-```
+
 
 ---
 
